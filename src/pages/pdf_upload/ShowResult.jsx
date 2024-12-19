@@ -8,7 +8,6 @@ import {
   ScrollArea, 
   SimpleGrid, 
   Text, 
-  ThemeIcon, 
   Tooltip 
 } from "@mantine/core";
 import { 
@@ -18,17 +17,13 @@ import {
   IconReceiptOff, 
   IconTextSize 
 } from "@tabler/icons-react";
-import { useRef, useState } from "react";
 
 export default function ShowResult(props) {
   const { data } = props;
-  const viewport = useRef(null);
-
 
   const filteredData = Object.entries(data).filter(([key]) => 
-  key.toLowerCase().includes('lotto')
-);
-
+    key.toLowerCase().includes('lotto')
+  );
 
   const handleLabel = (str) => {
     return str
@@ -138,3 +133,6 @@ export default function ShowResult(props) {
           </Box>
         ))}
       </SimpleGrid>
+    </ScrollArea>
+  );
+}
