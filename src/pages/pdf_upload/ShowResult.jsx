@@ -24,10 +24,11 @@ export default function ShowResult(props) {
   const { data } = props;
   const viewport = useRef(null);
 
-  // Filtriamo i metadati che non vogliamo mostrare
+
   const filteredData = Object.entries(data).filter(([key]) => 
-    !['completion_tokens', 'prompt_tokens', 'total_cost', 'total_tokens'].includes(key)
-  );
+  key.toLowerCase().includes('lotto')
+);
+
 
   const handleLabel = (str) => {
     return str
